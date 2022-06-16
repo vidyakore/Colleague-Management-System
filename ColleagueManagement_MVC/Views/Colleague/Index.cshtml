@@ -1,0 +1,46 @@
+﻿@model IEnumerable<ColleagueManagement_MVC.Models.Colleague>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "AddNewColleague")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ColleagueName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AddressId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.created)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ColleagueName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AddressId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.created)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditColleague", new { id=item.ColleagueId }) |
+            @Html.ActionLink("Details", "GetColleague", new { id= item.ColleagueId }) |
+            @Html.ActionLink("Delete", "DeleteColleague", new { id= item.ColleagueId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,43 @@
+﻿@model ColleagueManagement_MVC.Models.Colleague
+
+@{
+    ViewBag.Title = "GetColleague";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>GetColleague</h2>
+
+<div>
+    <h4>Colleague</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ColleagueName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ColleagueName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AddressId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AddressId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.created)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.created)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "EditColleague", new { id = Model.ColleagueId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
